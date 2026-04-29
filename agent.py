@@ -67,6 +67,8 @@ tools_definition = [
 
 def run_agent(messages: list):
     while True: 
+        # qwen3:0.6b is the smallest model that supports tools calling
+        # If your machine have the capabilities, you can use a model that was built for coding, like codellama or deepseek-coder.
         response = client.chat(model="qwen3:0.6b", 
                                 messages=messages,
                                 tools=tools_definition)
