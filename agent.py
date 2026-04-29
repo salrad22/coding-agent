@@ -90,6 +90,24 @@ def run_agent(messages: list):
                 # Extract the function name and the arguments dictionary
                 name = tool_call.function.name
                 args = tool_call.function.arguments # This is already a clean dict!
+
+                # --- NEW CONFIRMATION LOGIC ---
+                if name == "write_file":
+                    print(f"\n[CONFIRMATION REQUIRED]")
+                    print(f"Agent wants to write to: {args.get('path')}")
+                    print(f"Content preview: {args.get('content')[:100]}...")
+                    
+                    confirm = input("Allow this action? (y/n): ").lower()
+                    
+                    if confirm != 'y':
+                        # Feed the "rejection" back to the model so it knows
+                        messages.append({
+                            "role": "tool",
+                            "content": "User denied permission to run this tool.",
+                            "name": name
+                        })
+                        continue 
+                # ------------------------------
                 
                 # Dispatch to your local 'tools' dictionary
                 if name in tools:
