@@ -1,6 +1,6 @@
 # Local Code Agent
 
-A lightweight, autonomous AI agent designed to interact with your local file system. This agent uses Ollama and the Qwen3 model (can be used with any other model) to perform file operations (read, write, list) through structured tool calling.
+A lightweight, autonomous AI agent designed to interact with your local file system. This agent uses Ollama and any open source model model (that supports tools) calling to perform file operations (read, write, list) through structured tool calling.
 
 ## Features
 * **Autonomous Tool Use**: The agent intelligently decides when to read, write, or list files based on your natural language requests.
@@ -19,7 +19,7 @@ A lightweight, autonomous AI agent designed to interact with your local file sys
 1.  **Clone the project** to your local machine.
 2.  **Pull the model**: Ensure you have the model pulled in Ollama:
     ```bash
-    ollama pull qwen3:0.6b
+    ollama pull codellama
     ```
 3.  **Run the agent**:
     ```bash
