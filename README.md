@@ -2,6 +2,11 @@
 
 A lightweight, autonomous AI agent designed to interact with your local file system. This agent uses Ollama and any open source model model (that supports tools) calling to perform file operations (read, write, list) through structured tool calling.
 
+## Purpose
+- This agent is designed mainly for learning purposes, to understand how AI agents work and how to build them in practice.
+- This agent is not meant for production use, but rather for educational purposes.
+- Anyone can fork and modify this agent to suit their needs, and use it as a starting point for their own projects.
+
 ## Features
 * **Autonomous Tool Use**: The agent intelligently decides when to read, write, or list files based on your natural language requests.
 * **Structured Interaction**: Uses JSON-based tool calling for high reliability and error reduction.
