@@ -66,8 +66,6 @@ tools_definition = [
 ]
 
 def run_agent(messages: list):
-    print(f"DEBUG: messages type is {type(messages)}")
-    print(f"DEBUG: first element is {messages[0]}")
     while True: 
         response = client.chat(model="qwen3:0.6b", 
                                 messages=messages,
